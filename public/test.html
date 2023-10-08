@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    const app = document.getElementById("app")
+    app.style.cssText = "width:100px;height:100px;background:red;margin: 0 auto; "
+    
+    // 什么时候点击app 就将 function 推到宏任务队列
+    app.addEventListener("click",function(){
+        console.log("click");
+        alert("click");
+    })
+    for(var i = 0; i < 50000; i++){
+        console.log(i);
+    }
+    
+</script>
+
+</html>
